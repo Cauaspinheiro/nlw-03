@@ -7,7 +7,13 @@ import StyledMaps from '../styles/pages/Map'
 
 import Logo from '../../public/logo.svg'
 
-const Maps: React.FC = () => {
+import dynamic from 'next/dynamic'
+
+const DynamicComponentWithNoSSR = dynamic(() => import('../components/Map'), {
+  ssr: false
+})
+
+const Map: React.FC = () => {
   return (
     <StyledMaps>
       <Head>
@@ -28,10 +34,10 @@ const Maps: React.FC = () => {
         </footer>
       </aside>
 
-      <div></div>
+      <DynamicComponentWithNoSSR />
 
       <Link href="/">
-        <a>
+        <a id="return-button">
           <FiPlus size={32} color="#fff" />
         </a>
       </Link>
@@ -39,4 +45,4 @@ const Maps: React.FC = () => {
   )
 }
 
-export default Maps
+export default Map

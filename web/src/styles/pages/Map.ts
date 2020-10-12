@@ -8,11 +8,11 @@ export default styled.div`
   display: flex;
 
   aside {
-    width: 26vw;
+    width: 32vw;
 
     background: ${props => props.theme.gradients.blue};
 
-    padding: 80px;
+    padding: 64px;
 
     display: flex;
 
@@ -45,8 +45,9 @@ export default styled.div`
     }
   }
 
-  a {
+  #return-button {
     position: absolute;
+    z-index: 10;
 
     right: 40px;
     bottom: 40px;
