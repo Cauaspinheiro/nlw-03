@@ -13,6 +13,7 @@ const theme = {
     button_light: '#FFFFFF',
     title: '#0089A5',
     title_secondary: '#4D6F80',
+    title_white: '#f5f5f5',
     base: '#5C8599',
     complement: '#8FA7B2'
   },
