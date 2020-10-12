@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { FiArrowRight } from 'react-icons/fi'
+import Link from 'next/link'
 
 import LogoTextSVG from '../assets/logo_text.svg'
 import StyledLanding from '../styles/pages/Landing'
@@ -27,9 +28,11 @@ const Landing: React.FC = () => {
           <span>São Paulo</span>
         </div>
 
-        <a href="" id="enter-app">
-          <FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)" />
-        </a>
+        <Link href="/map">
+          <a id="enter-app">
+            <FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)" />
+          </a>
+        </Link>
       </div>
     </StyledLanding>
   )
