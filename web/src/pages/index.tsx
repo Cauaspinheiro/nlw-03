@@ -3,13 +3,13 @@ import Head from 'next/head'
 import { FiArrowRight } from 'react-icons/fi'
 
 import LogoTextSVG from '../assets/logo_text.svg'
-import Landing from '../styles/pages/Landing'
+import StyledLanding from '../styles/pages/Landing'
 
-const Home: React.FC = () => {
+const Landing: React.FC = () => {
   return (
-    <Landing>
+    <StyledLanding>
       <Head>
-        <title>Homepage</title>
+        <title>Happy</title>
       </Head>
 
       <div id="content-wrapper">
@@ -31,8 +31,8 @@ const Home: React.FC = () => {
           <FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)" />
         </a>
       </div>
-    </Landing>
+    </StyledLanding>
   )
 }
 
-export default Home
+export default Landing
