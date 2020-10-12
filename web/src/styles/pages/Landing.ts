@@ -14,12 +14,17 @@ export default styled.div`
     width: 100%;
     max-width: 1100px;
 
+    height: 100%;
+    max-height: 680px;
+
     position: relative;
 
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     justify-content: space-between;
+
+    background: url('/landing.svg') no-repeat 80% center;
 
     #location {
       position: absolute;
@@ -64,6 +69,8 @@ export default styled.div`
 
     main {
       max-width: 35rem;
+
+      margin-bottom: 12vh;
 
       h1 {
         font-size: 7.6rem;
