@@ -10,6 +10,10 @@ export default createGlobalStyle`
   body {
     background: ${props => props.theme.background.color};
     color: ${props => props.theme.texts.title};
-    font: 400 16px Roboto, sans-serif;
+
+  }
+
+  body, input, button, textarea {
+    font: 600 18px Nunito, Roboto, sans-serif;
   }
 `
