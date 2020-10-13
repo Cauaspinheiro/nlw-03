@@ -12,7 +12,13 @@ export default async function CreateOrphanagesController(
 ): Promise<Response> {
   const orphanagesRepository = getRepository(Orphanage)
 
-  const orphanage = orphanagesRepository.create(req.body)
+  const reqFiles = req.files as Express.Multer.File[]
+
+  const images = reqFiles.map((image) => {
+    return { path: image.filename }
+  })
+
+  const orphanage = orphanagesRepository.create({ ...req.body, images })
 
   await orphanagesRepository.save(orphanage)
 
