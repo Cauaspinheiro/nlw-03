@@ -108,3 +108,8 @@ build
 
 # SQLITE databases
 *.sqlite
+
+# UPLOAD FOLDER
+
+uploads/*
+!uploads/.gitkeep
