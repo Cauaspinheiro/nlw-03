@@ -15,6 +15,9 @@
     "noUnusedLocals": true /* Report errors on unused locals. */,
     "esModuleInterop": true,
     "skipLibCheck": true /* Skip type checking of declaration files. */,
-    "forceConsistentCasingInFileNames": false /* Disallow inconsistently-cased references to the same file. */
+    "forceConsistentCasingInFileNames": false /* Disallow inconsistently-cased references to the same file. */,
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   }
 }
