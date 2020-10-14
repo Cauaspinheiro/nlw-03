@@ -35,7 +35,7 @@ const MapWithSSR: React.FC<IMapProps> = ({ orphanages }) => {
               className="map-popup"
             >
               <span>{value.name}</span>
-              <Link href="/orphanages">
+              <Link href={`/orphanages/${value.id}`}>
                 <a>
                   <FiArrowRight size={20} color="#fff" />
                 </a>

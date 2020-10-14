@@ -28,7 +28,7 @@ const Landing: React.FC = () => {
           <span>São Paulo</span>
         </div>
 
-        <Link href="/map">
+        <Link href="/orphanages">
           <a id="enter-app">
             <FiArrowRight size={26} color="rgba(0, 0, 0, 0.6)" />
           </a>
