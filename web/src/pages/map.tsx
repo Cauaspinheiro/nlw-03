@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { FiPlus } from 'react-icons/fi'
 
@@ -8,8 +8,16 @@ import StyledMaps from '../styles/pages/Map'
 import Logo from '../../public/logo.svg'
 
 import LeafletMap from '../components/Map'
+import api from '../services/api'
+import { IOrphanage } from '../entities/Orphanage'
 
 const Map: React.FC = () => {
+  const [orphanages, setOrphanages] = useState<IOrphanage[]>([])
+
+  useEffect(() => {
+    api.get<IOrphanage[]>('/orphanages').then(({ data }) => setOrphanages(data))
+  }, [])
+
   return (
     <StyledMaps>
       <Head>
@@ -30,7 +38,7 @@ const Map: React.FC = () => {
         </footer>
       </aside>
 
-      <LeafletMap />
+      <LeafletMap orphanages={orphanages} />
 
       <Link href="/orphanages/create">
         <a id="return-button">

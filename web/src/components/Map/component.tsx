@@ -10,28 +10,39 @@ import {
   mapMarkerIcon,
   TILE_LAYER_URL
 } from '../../common/mapOpts'
+import { IOrphanage } from '../../entities/Orphanage'
 
-const MapWithSSR: React.FC = () => {
+export interface IMapProps {
+  orphanages: IOrphanage[]
+}
+
+const MapWithSSR: React.FC<IMapProps> = ({ orphanages }) => {
   return (
     <StyledMap>
       <Leaflet id="leaflet" center={DEFAULT_COORDINATES} zoom={15}>
         <TileLayer url={TILE_LAYER_URL} />
 
-        <Marker position={DEFAULT_COORDINATES} icon={mapMarkerIcon}>
-          <Popup
-            closeButton={false}
-            minWidth={240}
-            maxWidth={240}
-            className="map-popup"
+        {orphanages.map(value => (
+          <Marker
+            key={value.id}
+            position={[value.latitude, value.longitude]}
+            icon={mapMarkerIcon}
           >
-            <span>Orf. Esperança</span>
-            <Link href="/orphanages">
-              <a>
-                <FiArrowRight size={20} color="#fff" />
-              </a>
-            </Link>
-          </Popup>
-        </Marker>
+            <Popup
+              closeButton={false}
+              minWidth={240}
+              maxWidth={240}
+              className="map-popup"
+            >
+              <span>{value.name}</span>
+              <Link href="/orphanages">
+                <a>
+                  <FiArrowRight size={20} color="#fff" />
+                </a>
+              </Link>
+            </Popup>
+          </Marker>
+        ))}
       </Leaflet>
     </StyledMap>
   )
