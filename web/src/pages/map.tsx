@@ -7,11 +7,7 @@ import StyledMaps from '../styles/pages/Map'
 
 import Logo from '../../public/logo.svg'
 
-import dynamic from 'next/dynamic'
-
-const DynamicComponentWithNoSSR = dynamic(() => import('../components/Map'), {
-  ssr: false
-})
+import LeafletMap from '../components/Map'
 
 const Map: React.FC = () => {
   return (
@@ -34,7 +30,7 @@ const Map: React.FC = () => {
         </footer>
       </aside>
 
-      <DynamicComponentWithNoSSR />
+      <LeafletMap />
 
       <Link href="/">
         <a id="return-button">
