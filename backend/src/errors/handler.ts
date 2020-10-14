@@ -1,6 +1,6 @@
 import { ErrorRequestHandler } from 'express'
 
-const errorHandler: ErrorRequestHandler = (error, req, res) => {
+const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
   return res.status(500).json({ error: 'SOMETHING WENT WRONG' })
 }
 
