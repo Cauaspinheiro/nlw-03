@@ -14,7 +14,7 @@ export interface IShowOrphanageView {
 }
 
 export default {
-  render(orphanage: Orphanage): IShowOrphanageView {
+  render(orphanage: Orphanage, host?: string): IShowOrphanageView {
     return {
       id: orphanage.id,
       name: orphanage.name,
@@ -24,7 +24,7 @@ export default {
       instructions: orphanage.instructions,
       opening_hours: orphanage.opening_hours,
       open_on_weekends: orphanage.open_on_weekends,
-      images: ImagesView.render(orphanage.images),
+      images: ImagesView.render(orphanage.images, host),
     }
   },
 }

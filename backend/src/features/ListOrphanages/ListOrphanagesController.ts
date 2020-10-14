@@ -17,5 +17,7 @@ export default async function ListOrphanagesController(
     relations: ['images'],
   })
 
-  return res.status(200).json(ListOrphanagesView.render(orphanages))
+  return res
+    .status(200)
+    .json(ListOrphanagesView.render(orphanages, req.get('host')))
 }

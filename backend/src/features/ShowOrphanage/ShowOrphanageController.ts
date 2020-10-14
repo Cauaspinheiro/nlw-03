@@ -22,7 +22,9 @@ export default async function ShowOrphanageController(
       relations: ['images'],
     })
 
-    return res.status(200).json(ShowOrphanagesView.render(orphanage))
+    return res
+      .status(200)
+      .json(ShowOrphanagesView.render(orphanage, req.get('host')))
   } catch (error) {
     return res.status(404).json({ error: 'ORPHANAGE NOT FOUND' })
   }

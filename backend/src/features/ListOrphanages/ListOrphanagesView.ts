@@ -14,7 +14,7 @@ export interface IListOrphanageView {
 }
 
 export default {
-  render(orphanages: Orphanage[]): IListOrphanageView[] {
+  render(orphanages: Orphanage[], host?: string): IListOrphanageView[] {
     return orphanages.map((orphanage) => ({
       id: orphanage.id,
       name: orphanage.name,
@@ -24,7 +24,7 @@ export default {
       instructions: orphanage.instructions,
       opening_hours: orphanage.opening_hours,
       open_on_weekends: orphanage.open_on_weekends,
-      images: ImagesView.render(orphanage.images),
+      images: ImagesView.render(orphanage.images, host),
     }))
   },
 }

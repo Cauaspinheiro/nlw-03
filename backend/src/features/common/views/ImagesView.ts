@@ -6,10 +6,10 @@ export interface IImageView {
 }
 
 export default {
-  render(images: Image[]): IImageView[] {
+  render(images: Image[], host?: string): IImageView[] {
     return images.map((image) => ({
       id: image.id,
-      url: `http://localhost:3001/uploads/${image.path}`,
+      url: `${host && 'http://localhost:3001'}/uploads/${image.path}`,
     }))
   },
 }
