@@ -1,6 +1,7 @@
 import { Request, Response } from 'express'
 import Orphanage from '../../models/Orphanage'
 import { getRepository } from 'typeorm'
+import ShowOrphanagesView from './ShowOrphanagesView'
 
 export interface IShowOrphanageRequest extends Request {
   params: {
@@ -17,9 +18,11 @@ export default async function ShowOrphanageController(
   const orphanagesRepository = getRepository(Orphanage)
 
   try {
-    const orphanages = await orphanagesRepository.findOneOrFail(id)
+    const orphanage = await orphanagesRepository.findOneOrFail(id, {
+      relations: ['images'],
+    })
 
-    return res.status(200).json(orphanages)
+    return res.status(200).json(ShowOrphanagesView.render(orphanage))
   } catch (error) {
     return res.status(404).json({ error: 'ORPHANAGE NOT FOUND' })
   }
