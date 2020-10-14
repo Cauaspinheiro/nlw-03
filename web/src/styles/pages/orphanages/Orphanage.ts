@@ -22,7 +22,7 @@ export const StyledOrphanage = styled.div`
   .orphanage-details > img {
     width: 100%;
     height: 300px;
-    object-fit: cover;
+    object-fit: fill;
   }
 
   .orphanage-details .images {
@@ -144,6 +144,12 @@ export const StyledOrphanage = styled.div`
     background: linear-gradient(154.16deg, #edfff6 7.85%, #ffffff 91.03%);
     border: 1px solid #a1e9c5;
     color: #37c77f;
+  }
+
+  .orphanage-details .orphanage-details-content .open-details div.dont-open {
+    background: linear-gradient(154.16deg, #ffe4ee 7.85%, #ffffff 91.03%);
+    border: 1px solid #ffe4ee;
+    color: #ff669d;
   }
 
   .orphanage-details .orphanage-details-content button.contact-button {
