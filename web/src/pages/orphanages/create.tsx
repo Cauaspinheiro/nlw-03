@@ -1,31 +1,15 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 
-import { FiArrowLeft, FiPlus } from 'react-icons/fi'
-
-import Logo from '../../../public/logo.svg'
+import { FiPlus } from 'react-icons/fi'
 
 import { StyledCreateOrphanage } from '../../styles/pages/orphanages/CreateOrphanage'
 import CreateOrphanageMap from '../../components/CreateOrphanageMap'
+import Sidebar from '../../components/Sidebar'
 
 const CreateOrphanage: React.FC = () => {
-  const router = useRouter()
-
-  function handleGoBack() {
-    router.back()
-  }
-
   return (
     <StyledCreateOrphanage>
-      <aside>
-        <Logo />
-
-        <footer>
-          <button type="button" onClick={handleGoBack}>
-            <FiArrowLeft size={24} color="#FFF" />
-          </button>
-        </footer>
-      </aside>
+      <Sidebar />
 
       <main>
         <form className="create-orphanage-form">
