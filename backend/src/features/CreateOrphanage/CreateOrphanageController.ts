@@ -1,10 +1,7 @@
-import { Request, Response } from 'express'
+import { Response } from 'express'
 import Orphanage from '../../models/Orphanage'
 import { getRepository } from 'typeorm'
-
-export interface ICreateOrphanageRequest extends Request {
-  body: Orphanage
-}
+import { ICreateOrphanageRequest } from './CreateOrphanageInterfaces'
 
 export default async function CreateOrphanagesController(
   req: ICreateOrphanageRequest,
