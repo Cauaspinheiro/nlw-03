@@ -25,7 +25,7 @@ const MapWithSSR: React.FC = () => {
             className="map-popup"
           >
             <span>Orf. Esperança</span>
-            <Link href="/">
+            <Link href="/orphanages">
               <a>
                 <FiArrowRight size={20} color="#fff" />
               </a>

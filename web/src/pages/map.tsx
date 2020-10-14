@@ -32,7 +32,7 @@ const Map: React.FC = () => {
 
       <LeafletMap />
 
-      <Link href="/">
+      <Link href="/orphanages/create">
         <a id="return-button">
           <FiPlus size={32} color="#fff" />
         </a>

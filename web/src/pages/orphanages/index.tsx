@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import { FaWhatsapp } from 'react-icons/fa'
 import { FiClock, FiInfo, FiArrowLeft } from 'react-icons/fi'
 
@@ -7,13 +8,19 @@ import OrphanageMap from '../../components/OrphanageMap'
 import { StyledOrphanage } from '../../styles/pages/orphanages/Orphanage'
 
 const Orphanage: React.FC = () => {
+  const router = useRouter()
+
+  function handleGoBack() {
+    router.back()
+  }
+
   return (
     <StyledOrphanage>
       <aside>
         <Logo />
 
         <footer>
-          <button type="button">
+          <button type="button" onClick={handleGoBack}>
             <FiArrowLeft size={24} color="#FFF" />
           </button>
         </footer>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import { FiArrowLeft, FiPlus } from 'react-icons/fi'
 
@@ -8,13 +9,19 @@ import { StyledCreateOrphanage } from '../../styles/pages/orphanages/CreateOrpha
 import CreateOrphanageMap from '../../components/CreateOrphanageMap'
 
 const CreateOrphanage: React.FC = () => {
+  const router = useRouter()
+
+  function handleGoBack() {
+    router.back()
+  }
+
   return (
     <StyledCreateOrphanage>
       <aside>
         <Logo />
 
         <footer>
-          <button type="button">
+          <button type="button" onClick={handleGoBack}>
             <FiArrowLeft size={24} color="#FFF" />
           </button>
         </footer>
