@@ -15,7 +15,11 @@ export default async function CreateOrphanagesController(
     return { path: image.filename }
   })
 
-  const orphanage = orphanagesRepository.create({ ...req.body, images })
+  const orphanage = orphanagesRepository.create({
+    ...req.body,
+    images,
+    open_on_weekends: String(req.body.open_on_weekends) === 'true',
+  })
 
   await orphanagesRepository.save(orphanage)
 

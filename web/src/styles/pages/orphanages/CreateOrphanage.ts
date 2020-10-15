@@ -18,6 +18,13 @@ export const StyledCreateOrphanage = styled.div`
     padding: 64px 80px;
 
     overflow: hidden;
+
+    .leaflet-container {
+      margin-bottom: 40px;
+
+      border: 2px solid #d3e2e5;
+      border-radius: 20px;
+    }
   }
 
   form.create-orphanage-form fieldset {
@@ -82,13 +89,33 @@ export const StyledCreateOrphanage = styled.div`
     line-height: 28px;
   }
 
-  form.create-orphanage-form .input-block .new-image {
+  form.create-orphanage-form .input-block .images-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 16px;
+  }
+
+  form.create-orphanage-form .input-block .images-container img {
     width: 100%;
-    height: 64px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  form.create-orphanage-form .input-block input[type='file'] {
+    display: none;
+  }
+
+  form.create-orphanage-form .input-block .new-image {
+    height: 96px;
     background: #f5f8fa;
     border: 1px dashed #96d2f0;
     border-radius: 20px;
     cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   form.create-orphanage-form .input-block .button-select {
