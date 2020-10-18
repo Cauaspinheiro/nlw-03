@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import { Platform, StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { useFonts } from 'expo-font'
 import {
   Nunito_600SemiBold,
@@ -24,11 +23,6 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar
-        style="light"
-        backgroundColor="#000"
-        hidden={Platform.OS === 'ios'}
-      />
       <Routes />
     </View>
   )
